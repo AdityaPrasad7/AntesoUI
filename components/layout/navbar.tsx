@@ -2,11 +2,13 @@
 
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { Menu, X, Sun, Moon, ChevronDown, Facebook, Linkedin } from "lucide-react"
 import Image from "next/image"
 import { useTheme } from "next-themes"
 
 export default function Navbar() {
+  const router = useRouter()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false)
   const { theme, setTheme } = useTheme()
@@ -214,36 +216,36 @@ export default function Navbar() {
               </button>
               {servicesDropdownOpen && (
                 <div className="mt-2 pl-4 space-y-2 animate-fade-in">
-                  <Link
-                    href="/services/quality-assurance"
+                  <button
                     onClick={() => {
                       setServicesDropdownOpen(false)
                       setMobileMenuOpen(false)
+                      router.push("/services/quality-assurance")
                     }}
-                    className="block text-sm text-foreground/60 hover:text-foreground transition-colors"
+                    className="block w-full text-left text-sm text-foreground/60 hover:text-foreground transition-colors"
                   >
                     Quality Assurance
-                  </Link>
-                  <Link
-                    href="/services/consultation"
+                  </button>
+                  <button
                     onClick={() => {
                       setServicesDropdownOpen(false)
                       setMobileMenuOpen(false)
+                      router.push("/services/consultation")
                     }}
-                    className="block text-sm text-foreground/60 hover:text-foreground transition-colors"
+                    className="block w-full text-left text-sm text-foreground/60 hover:text-foreground transition-colors"
                   >
                     Consultation
-                  </Link>
-                  <Link
-                    href="/services/repair-maintenance"
+                  </button>
+                  <button
                     onClick={() => {
                       setServicesDropdownOpen(false)
                       setMobileMenuOpen(false)
+                      router.push("/services/repair-maintenance")
                     }}
-                    className="block text-sm text-foreground/60 hover:text-foreground transition-colors"
+                    className="block w-full text-left text-sm text-foreground/60 hover:text-foreground transition-colors"
                   >
                     Services, Repair & Maintenance
-                  </Link>
+                  </button>
                 </div>
               )}
             </div>
