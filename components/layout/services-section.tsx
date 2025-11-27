@@ -115,7 +115,7 @@ export default function ServicesSection() {
   ]
 
   return (
-    <section className="py-20 2xl:py-28 3xl:py-36 4xl:py-44 px-4 sm:px-6 lg:px-8 2xl:px-12 3xl:px-16 4xl:px-20 5xl:px-24 6xl:px-32 bg-gradient-to-b from-muted/30 to-background w-full">
+    <section id="services" className="py-20 2xl:py-28 3xl:py-36 4xl:py-44 px-4 sm:px-6 lg:px-8 2xl:px-12 3xl:px-16 4xl:px-20 5xl:px-24 6xl:px-32 bg-gradient-to-b from-muted/30 to-background w-full">
       <div className="max-w-4xl 2xl:max-w-[80rem] 3xl:max-w-[100rem] 4xl:max-w-[128rem] 5xl:max-w-[176rem] 6xl:max-w-[208rem] mx-auto">
         <div className="text-center mb-16 2xl:mb-20 3xl:mb-24 4xl:mb-28 animate-on-scroll">
           <h2 className="text-4xl 2xl:text-5xl 3xl:text-6xl 4xl:text-7xl font-bold mb-4 2xl:mb-6 3xl:mb-8 animate-fade-in-up-wide delay-100">Our Services</h2>

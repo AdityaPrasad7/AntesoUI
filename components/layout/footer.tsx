@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect } from "react"
+import Link from "next/link"
 import { Facebook, MessageCircle, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, ArrowRight } from "lucide-react"
 import Image from "next/image"
 
@@ -31,7 +32,7 @@ export default function Footer() {
     { 
       name: "Facebook", 
       icon: Facebook, 
-      href: "https://www.facebook.com",
+      href: "https://www.facebook.com/profile.php?id=100069402677347",
       color: "hover:bg-[#1877F2] hover:border-[#1877F2] hover:text-white"
     },
     { 
@@ -55,7 +56,7 @@ export default function Footer() {
     { 
       name: "LinkedIn", 
       icon: Linkedin, 
-      href: "https://www.linkedin.com",
+      href: "https://www.linkedin.com/company/antesobiomedical/",
       color: "hover:bg-[#0A66C2] hover:border-[#0A66C2] hover:text-white"
     },
   ]
@@ -103,15 +104,20 @@ export default function Footer() {
                 <div className="absolute -bottom-2 left-0 w-12 h-0.5 bg-gradient-to-r from-accent to-primary rounded-full" />
               </h4>
               <ul className="space-y-2 2xl:space-y-2.5 3xl:space-y-3">
-                {["X-Ray Systems", "CT Imaging", "Mammography", "Quality Assurance"].map((link, j) => (
+                {[
+                  { name: "X-Ray Systems", href: "/#services" },
+                  { name: "CT Imaging", href: "/#services" },
+                  { name: "Mammography", href: "/#services" },
+                  { name: "Quality Assurance", href: "/services/quality-assurance" },
+                ].map((link, j) => (
                   <li key={j} className="animate-fade-in-up" style={{ animationDelay: `${0.3 + j * 0.05}s` }}>
-                    <a 
-                      href="#" 
+                    <Link 
+                      href={link.href}
                       className="group flex items-center gap-2 text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl text-foreground/70 hover:text-accent transition-all duration-300"
                     >
                       <ArrowRight className="w-4 h-4 2xl:w-5 2xl:h-5 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
-                      <span className="group-hover:translate-x-1 transition-transform duration-300">{link}</span>
-                    </a>
+                      <span className="group-hover:translate-x-1 transition-transform duration-300">{link.name}</span>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -124,15 +130,20 @@ export default function Footer() {
                 <div className="absolute -bottom-2 left-0 w-12 h-0.5 bg-gradient-to-r from-accent to-primary rounded-full" />
               </h4>
               <ul className="space-y-2 2xl:space-y-2.5 3xl:space-y-3">
-                {["About Us", "Careers", "Accreditations", "Contact"].map((link, j) => (
+                {[
+                  { name: "Profile", href: "/profile" },
+                  { name: "Careers", href: "/careers" },
+                  { name: "Accreditations", href: "/accreditations" },
+                  { name: "Contact", href: "/contact" },
+                ].map((link, j) => (
                   <li key={j} className="animate-fade-in-up" style={{ animationDelay: `${0.4 + j * 0.05}s` }}>
-                    <a 
-                      href="#" 
+                    <Link 
+                      href={link.href}
                       className="group flex items-center gap-2 text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl text-foreground/70 hover:text-accent transition-all duration-300"
                     >
                       <ArrowRight className="w-4 h-4 2xl:w-5 2xl:h-5 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
-                      <span className="group-hover:translate-x-1 transition-transform duration-300">{link}</span>
-                    </a>
+                      <span className="group-hover:translate-x-1 transition-transform duration-300">{link.name}</span>
+                    </Link>
                   </li>
                 ))}
               </ul>

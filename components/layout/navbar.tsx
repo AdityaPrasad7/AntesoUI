@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
-import { Menu, X, Sun, Moon, ChevronDown } from "lucide-react"
+import { Menu, X, Sun, Moon, ChevronDown, Facebook, Linkedin } from "lucide-react"
 import Image from "next/image"
 import { useTheme } from "next-themes"
 
@@ -109,6 +109,38 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:flex items-center gap-4 2xl:gap-6 3xl:gap-8">
+          {/* Social Media Icons */}
+          <div className="flex items-center gap-3 2xl:gap-4">
+            <a
+              href="https://www.facebook.com/profile.php?id=100069402677347"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent hover:text-accent/80 transition-all duration-300 group"
+              aria-label="Facebook"
+            >
+              <Facebook 
+                className="w-4 h-4 2xl:w-4.5 2xl:h-4.5 3xl:w-5 3xl:h-5 fill-current transition-all group-hover:scale-110 drop-shadow-[0_2px_4px_rgba(0,0,0,0.2)] drop-shadow-[0_1px_2px_rgba(0,0,0,0.15)] group-hover:drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)] group-hover:drop-shadow-[0_2px_4px_rgba(0,0,0,0.2)]" 
+                style={{
+                  filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15))',
+                }}
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/antesobiomedical/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent hover:text-accent/80 transition-all duration-300 group"
+              aria-label="LinkedIn"
+            >
+              <Linkedin 
+                className="w-4 h-4 2xl:w-4.5 2xl:h-4.5 3xl:w-5 3xl:h-5 fill-current transition-all group-hover:scale-110 drop-shadow-[0_2px_4px_rgba(0,0,0,0.2)] drop-shadow-[0_1px_2px_rgba(0,0,0,0.15)] group-hover:drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)] group-hover:drop-shadow-[0_2px_4px_rgba(0,0,0,0.2)]" 
+                style={{
+                  filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15))',
+                }}
+              />
+            </a>
+          </div>
+          
           {/* Theme Toggle Button */}
           {mounted ? (
             <button
@@ -229,6 +261,42 @@ export default function Navbar() {
             >
               Contact
             </Link>
+            {/* Mobile Social Media Icons */}
+            <div className="flex items-center gap-3 pt-2 border-t border-border">
+              <span className="text-sm font-medium text-foreground/70">Follow Us:</span>
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://www.facebook.com/profile.php?id=100069402677347"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent hover:text-accent/80 transition-all duration-300 group"
+                  aria-label="Facebook"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <Facebook 
+                    className="w-4.5 h-4.5 fill-current transition-all group-hover:scale-110" 
+                    style={{
+                      filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15))',
+                    }}
+                  />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/antesobiomedical/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent hover:text-accent/80 transition-all duration-300 group"
+                  aria-label="LinkedIn"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <Linkedin 
+                    className="w-4.5 h-4.5 fill-current transition-all group-hover:scale-110" 
+                    style={{
+                      filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15))',
+                    }}
+                  />
+                </a>
+              </div>
+            </div>
             {/* Mobile Theme Toggle */}
             <div className="flex items-center justify-between pt-2 border-t border-border">
               <span className="text-sm font-medium text-foreground/70">Theme</span>

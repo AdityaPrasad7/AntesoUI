@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { ChevronRight, Shield, Award, ArrowRight, Zap } from "lucide-react"
+import { ChevronRight, Shield, Award, ArrowRight, Zap, Mail, Phone } from "lucide-react"
 import { Navbar, Footer } from "@/components/layout"
 import ServicesSection from "@/components/layout/services-section"
 
@@ -73,17 +73,34 @@ export default function Page() {
               </h1>
 
               <p className="text-base 2xl:text-lg 3xl:text-xl 4xl:text-2xl text-foreground/70 leading-relaxed max-w-lg 2xl:max-w-2xl 3xl:max-w-3xl 4xl:max-w-4xl animate-fade-in-up-wide delay-300 -mt-2 2xl:-mt-3 3xl:-mt-4 4xl:-mt-5">
-                Precision imaging technology and comprehensive quality assurance services that set the standard for
-                diagnostic excellence across medical institutions worldwide.
+                Verification of the Radiation Safety as per AERB Guidelines for the Radiation Equipment installed
               </p>
 
+              {/* Contact Info */}
+              <div className="flex flex-col gap-3 2xl:gap-3.5 3xl:gap-4 mt-4 2xl:mt-5 3xl:mt-6 4xl:mt-8 animate-fade-in-up delay-350">
+                <a 
+                  href="mailto:info@antesobiomedicalopc.com" 
+                  className="group flex items-center gap-2 2xl:gap-2.5 text-xs 2xl:text-sm 3xl:text-base text-foreground/70 hover:text-accent transition-all duration-300"
+                >
+                  <Mail className="w-3 h-3 2xl:w-3.5 2xl:h-3.5 3xl:w-4 3xl:h-4 text-accent transition-transform group-hover:scale-110" />
+                  <span className="group-hover:translate-x-1 transition-transform duration-300">info@antesobiomedicalopc.com</span>
+                </a>
+                <a 
+                  href="tel:+918470909720" 
+                  className="group flex items-center gap-2 2xl:gap-2.5 text-xs 2xl:text-sm 3xl:text-base text-foreground/70 hover:text-accent transition-all duration-300"
+                >
+                  <Phone className="w-3 h-3 2xl:w-3.5 2xl:h-3.5 3xl:w-4 3xl:h-4 text-accent transition-transform group-hover:scale-110" />
+                  <span className="group-hover:translate-x-1 transition-transform duration-300">+91 847 090 9720</span>
+                </a>
+              </div>
+
               <div className="flex flex-col sm:flex-row gap-4 2xl:gap-6 3xl:gap-8 animate-fade-in-up delay-400">
-                <button className="px-6 py-2.5 2xl:px-8 2xl:py-3 3xl:px-10 3xl:py-3.5 4xl:px-12 4xl:py-4 rounded-lg bg-gradient-to-r from-accent to-primary text-accent-foreground text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl font-medium hover:shadow-lg hover:shadow-accent/20 transition-all flex items-center justify-center gap-2">
+                <a href="#services" className="px-6 py-2.5 2xl:px-8 2xl:py-3 3xl:px-10 3xl:py-3.5 4xl:px-12 4xl:py-4 rounded-lg bg-gradient-to-r from-accent to-primary text-accent-foreground text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl font-medium hover:shadow-lg hover:shadow-accent/20 transition-all flex items-center justify-center gap-2">
                   Explore Solutions <ArrowRight className="w-4 h-4 2xl:w-5 2xl:h-5 3xl:w-6 3xl:h-6 4xl:w-7 4xl:h-7" />
-                </button>
-                <button className="px-6 py-2.5 2xl:px-8 2xl:py-3 3xl:px-10 3xl:py-3.5 4xl:px-12 4xl:py-4 rounded-lg border border-accent/30 text-foreground text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl font-medium hover:bg-accent/5 transition-colors">
+                </a>
+                <Link href="/contact" className="px-6 py-2.5 2xl:px-8 2xl:py-3 3xl:px-10 3xl:py-3.5 4xl:px-12 4xl:py-4 rounded-lg border border-accent/30 text-foreground text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl font-medium hover:bg-accent/5 transition-colors">
                   Learn More
-                </button>
+                </Link>
               </div>
 
               <div className="flex gap-8 2xl:gap-12 3xl:gap-16 4xl:gap-20 pt-4 2xl:pt-6 3xl:pt-8 -mt-4 2xl:-mt-5 3xl:-mt-6 4xl:-mt-7 animate-fade-in-up delay-500">
@@ -117,7 +134,7 @@ export default function Page() {
                     }`}
                   >
                     <div className="relative w-full h-full overflow-hidden rounded-2xl 2xl:rounded-3xl">
-                      <img
+                <img
                         src={image}
                         alt={`Medical imaging equipment ${index + 1}`}
                         className={`w-full h-full object-cover rounded-2xl 2xl:rounded-3xl transition-all duration-[20000ms] ease-linear animate-scale-in delay-300 ${
@@ -139,7 +156,7 @@ export default function Page() {
                         isActive ? "opacity-0" : "opacity-100"
                       }`} />
                     </div>
-                  </div>
+              </div>
                 )
               })}
             </div>
@@ -153,25 +170,27 @@ export default function Page() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 2xl:gap-16 3xl:gap-20 4xl:gap-24 items-center mb-16 2xl:mb-20 3xl:mb-24 4xl:mb-28">
             <div className="animate-on-scroll">
               <h2 className="text-4xl 2xl:text-5xl 3xl:text-6xl 4xl:text-7xl font-bold mb-6 2xl:mb-8 3xl:mb-10 4xl:mb-12 animate-fade-in-up-wide delay-100">Quality Assurance Excellence</h2>
-              <p className="text-lg 2xl:text-xl 3xl:text-2xl 4xl:text-3xl text-foreground/70 mb-6 2xl:mb-8 3xl:mb-10 4xl:mb-12 leading-relaxed animate-fade-in-up-wide delay-200">
-                Our comprehensive quality assurance testing ensures your diagnostic equipment meets the highest
-                standards for performance, safety, and regulatory compliance.
-              </p>
+              
+              <div className="space-y-6 2xl:space-y-8 3xl:space-y-10 4xl:space-y-12">
+                <p className="text-lg 2xl:text-xl 3xl:text-2xl 4xl:text-3xl text-foreground/80 leading-relaxed animate-fade-in-up-wide delay-200">
+                  It is a set of performance tests performed on a particular X Ray Diagnostic Equipments that verify whether the applied factors ( kV, Time, Dose, Output Consistency, Leakage Radiation etc.) are within tolerance limit specified by AERB.
+                </p>
 
-              <div className="space-y-4 2xl:space-y-6 3xl:space-y-8">
-                {[
-                  "Image Quality & Radiation Safety Verification",
-                  "Regulatory Compliance & Documentation",
-                  "Performance Optimization & Calibration",
-                  "Comprehensive Annual Service Reports",
-                ].map((item, i) => (
-                  <div key={i} className="flex gap-4 2xl:gap-6 3xl:gap-8 items-start animate-fade-in-up" style={{ animationDelay: `${0.3 + i * 0.1}s` }}>
-                    <div className="w-6 h-6 2xl:w-8 2xl:h-8 3xl:w-10 3xl:h-10 4xl:w-12 4xl:h-12 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center flex-shrink-0 mt-1">
-                      <ChevronRight className="w-4 h-4 2xl:w-5 2xl:h-5 3xl:w-6 3xl:h-6 4xl:w-7 4xl:h-7 text-accent-foreground" />
+                <div className="space-y-4 2xl:space-y-6 3xl:space-y-8">
+                  {[
+                    "It takes of the Image Quality, Radiation Safety & Life span of the Radiation Equipment.",
+                    "Improve efficiency of Radiation Output deliver by equipment, therefore reduce Absorbed body Dose.",
+                    "It also required by other Regulatory & bench making councils/Organisation such as AERB, NABH, State Govt. etc.",
+                    "Radiation Survay / Radiation Leakage Test verify the safety of the operator, patients & general public.",
+                  ].map((item, i) => (
+                    <div key={i} className="flex gap-4 2xl:gap-6 3xl:gap-8 items-start animate-fade-in-up" style={{ animationDelay: `${0.3 + i * 0.1}s` }}>
+                      <div className="w-6 h-6 2xl:w-8 2xl:h-8 3xl:w-10 3xl:h-10 4xl:w-12 4xl:h-12 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center flex-shrink-0 mt-1">
+                        <ChevronRight className="w-4 h-4 2xl:w-5 2xl:h-5 3xl:w-6 3xl:h-6 4xl:w-7 4xl:h-7 text-accent-foreground" />
+                      </div>
+                      <p className="text-foreground/80 text-base 2xl:text-lg 3xl:text-xl 4xl:text-2xl">{item}</p>
                     </div>
-                    <p className="text-foreground/80 text-base 2xl:text-lg 3xl:text-xl 4xl:text-2xl">{item}</p>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -239,9 +258,9 @@ export default function Page() {
                 Connect with our team to explore how ANTESO solutions can enhance your medical institution's
                 capabilities.
               </p>
-              <button className="px-8 py-3 2xl:px-10 2xl:py-4 3xl:px-12 3xl:py-5 4xl:px-16 4xl:py-6 rounded-lg bg-gradient-to-r from-accent to-primary text-accent-foreground 2xl:text-lg 3xl:text-xl 4xl:text-2xl font-medium hover:shadow-lg hover:shadow-accent/20 transition-all animate-fade-in-up delay-500">
+              <Link href="/contact" className="inline-block px-8 py-3 2xl:px-10 2xl:py-4 3xl:px-12 3xl:py-5 4xl:px-16 4xl:py-6 rounded-lg bg-gradient-to-r from-accent to-primary text-accent-foreground 2xl:text-lg 3xl:text-xl 4xl:text-2xl font-medium hover:shadow-lg hover:shadow-accent/20 transition-all animate-fade-in-up delay-500">
                 Get in Touch Today
-              </button>
+              </Link>
             </div>
           </div>
         </div>

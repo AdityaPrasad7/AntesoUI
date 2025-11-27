@@ -14,19 +14,22 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
+        url: '/logo1.png',
+        type: 'image/png',
       },
       {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
+        url: '/logo.png',
+        sizes: '32x32',
+        type: 'image/png',
       },
       {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: '/logo.png',
+        sizes: '16x16',
+        type: 'image/png',
       },
     ],
-    apple: '/apple-icon.png',
+    apple: '/logo.png',
+    shortcut: '/logo.png',
   },
 }
 
@@ -44,7 +47,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+        {children}
         </ThemeProvider>
         <Analytics />
       </body>
