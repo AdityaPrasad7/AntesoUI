@@ -94,11 +94,11 @@ export default function Page() {
                 </a>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 2xl:gap-6 3xl:gap-8 animate-fade-in-up delay-400">
-                <a href="#services" className="px-6 py-2.5 2xl:px-8 2xl:py-3 3xl:px-10 3xl:py-3.5 4xl:px-12 4xl:py-4 rounded-lg bg-gradient-to-r from-accent to-primary text-accent-foreground text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl font-medium hover:shadow-lg hover:shadow-accent/20 transition-all flex items-center justify-center gap-2">
-                  Explore Solutions <ArrowRight className="w-4 h-4 2xl:w-5 2xl:h-5 3xl:w-6 3xl:h-6 4xl:w-7 4xl:h-7" />
+              <div className="flex flex-row gap-3 sm:gap-4 2xl:gap-6 3xl:gap-8 animate-fade-in-up delay-400">
+                <a href="#services" className="flex-1 px-4 py-2.5 sm:px-6 2xl:px-8 2xl:py-3 3xl:px-10 3xl:py-3.5 4xl:px-12 4xl:py-4 rounded-lg bg-gradient-to-r from-accent to-primary text-accent-foreground text-xs sm:text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl font-medium hover:shadow-lg hover:shadow-accent/20 transition-all flex items-center justify-center gap-2">
+                  Explore Solutions <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 2xl:w-5 2xl:h-5 3xl:w-6 3xl:h-6 4xl:w-7 4xl:h-7" />
                 </a>
-                <Link href="/contact" className="px-6 py-2.5 2xl:px-8 2xl:py-3 3xl:px-10 3xl:py-3.5 4xl:px-12 4xl:py-4 rounded-lg border border-accent/30 text-foreground text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl font-medium hover:bg-accent/5 transition-colors">
+                <Link href="/contact" className="flex-1 px-4 py-2.5 sm:px-6 2xl:px-8 2xl:py-3 3xl:px-10 3xl:py-3.5 4xl:px-12 4xl:py-4 rounded-lg border border-accent/30 text-foreground text-xs sm:text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl font-medium hover:bg-accent/5 transition-colors text-center">
                   Learn More
                 </Link>
               </div>
