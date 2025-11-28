@@ -57,7 +57,7 @@ export default function ContactPage() {
     },
     {
       icon: <MapPin className="w-6 h-6 2xl:w-7 2xl:h-7 3xl:w-8 3xl:h-8 text-accent" />,
-      label: "Our Branches",
+      label: "Our RSOs",
       value: "Regional Service Offices (RSOs) across India, including Bangalore, Hyderabad, Kolkata, Patna, Ranchi, Lucknow, Kullu, and several other strategic locations."
     },
     {

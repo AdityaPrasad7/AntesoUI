@@ -32,16 +32,64 @@ export default function AccreditationsPage() {
 
   const certificates = [
     {
-      image: "/Accreditations/certificate1.jpg",
-      alt: "AERB Approval Certificate"
-    },
-    {
       image: "/Accreditations/certificate2.jpg",
       alt: "AERB Registration Certificate"
     },
     {
       image: "/Accreditations/certificate3.jpg",
       alt: "NABL Accreditation Certificate"
+    },
+    {
+      image: "/accreditations2/ANIMESH SRIVASTAVA RT_RSOApproval_Letter_1723771.pdf_20250927110153552_page-0001.jpg",
+      alt: "RSO Approval Letter - Animesh Srivastava"
+    },
+    {
+      image: "/accreditations2/ASHISH THAKUR_RSOApproval_Letter_1379774_page-0001.jpg",
+      alt: "RSO Approval Letter - Ashish Thakur"
+    },
+    {
+      image: "/accreditations2/JHAVE RAM_RSOApproval_Letter_1421399_page-0001.jpg",
+      alt: "RSO Approval Letter - Jhave Ram"
+    },
+    {
+      image: "/accreditations2/KAHAN SINGH_RSOApproval_Letter_1492381 (1)_page-0001.jpg",
+      alt: "RSO Approval Letter - Kahan Singh"
+    },
+    {
+      image: "/accreditations2/RAJ KUMAR_RSOApproval_Letter_1380446_page-0001.jpg",
+      alt: "RSO Approval Letter - Raj Kumar"
+    },
+    {
+      image: "/accreditations2/RAJESH KUMAR DUBEY_RSOApproval_Letter_1492384 (1)_page-0001.jpg",
+      alt: "RSO Approval Letter - Rajesh Kumar Dubey"
+    },
+    {
+      image: "/accreditations2/RAVI KASHYAP_RSOApproval_Letter_1283267.pdf_20231009123020383_page-0001.jpg",
+      alt: "RSO Approval Letter - Ravi Kashyap"
+    },
+    {
+      image: "/accreditations2/RT_RSOApproval_Letter_1735399_page-0001.jpg",
+      alt: "RSO Approval Letter"
+    },
+    {
+      image: "/accreditations2/SOHAN LAL THAKUR_RSOApproval_Letter_1283083.pdf_20231009091012596_page-0001.jpg",
+      alt: "RSO Approval Letter - Sohan Lal Thakur"
+    },
+    {
+      image: "/accreditations2/SOMNATH MUKHERJEE RT_RSOApproval_Letter_1722114.pdf_20250924195508890_page-0001.jpg",
+      alt: "RSO Approval Letter - Somnath Mukherjee"
+    },
+    {
+      image: "/accreditations2/SUBRAHMANYA B_RSOApproval_Letter_1580155 (1)_page-0001.jpg",
+      alt: "RSO Approval Letter - Subrahmanya B"
+    },
+    {
+      image: "/accreditations2/VARUN RATHAUR_RSOApproval_Letter_1628953.pdf_20250430133529906 (2)_page-0001.jpg",
+      alt: "RSO Approval Letter - Varun Rathaur"
+    },
+    {
+      image: "/accreditations2/VENKTESH DUBEY_RSOApproval_Letter_1283270.pdf_20231009123216427_page-0001.jpg",
+      alt: "RSO Approval Letter - Venktesh Dubey"
     }
   ]
 

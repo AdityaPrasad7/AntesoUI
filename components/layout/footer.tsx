@@ -156,7 +156,7 @@ export default function Footer() {
           <div className="border-t border-border/50 pt-6 2xl:pt-7 3xl:pt-8 4xl:pt-9 animate-on-scroll">
             <div className="flex flex-col md:flex-row justify-center items-center gap-6 2xl:gap-8">
               <p className="text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl text-foreground/60 animate-fade-in-up delay-500 text-center">
-                © 2025 <span className="font-semibold text-foreground/80">ANTESO Biomedical</span>. All rights reserved.
+                © {new Date().getFullYear()} <span className="font-semibold text-foreground/80">ANTESO Biomedical</span>. All rights reserved.
               </p>
             </div>
           </div>

@@ -176,9 +176,7 @@ export default function ProfilePage() {
                     Our Professional Team
                   </h3>
                   <p className="text-lg 2xl:text-xl 3xl:text-2xl 4xl:text-3xl text-foreground/80 leading-relaxed animate-fade-in-up-wide delay-200">
-                    Our professional team of engineers and technicians are fully trained, multi modality, multi-vendor
-                    specialists who are backed up by physicians and radiation protection officers. You will find attached
-                    quotations and supporting documents.
+                  Our company has 12 Radiological Safety Officers duly approved by AERB, in accordance with all regulatory duties and compliance requirements specified under the Atomic Energy (Radiation Protection) Rules, 2004 for Quality Assurance Test of all the modalities.
                   </p>
                 </div>
               </div>

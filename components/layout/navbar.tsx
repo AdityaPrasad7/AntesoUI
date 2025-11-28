@@ -186,7 +186,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="px-5 py-2 2xl:px-6 2xl:py-2.5 3xl:px-7 3xl:py-3 rounded-lg bg-gradient-to-r from-accent to-primary text-accent-foreground text-sm 2xl:text-base 3xl:text-lg hover:shadow-lg hover:shadow-accent/20 transition-all"
           >
-            Start Enquiry
+            Enquiry Now
           </a>
         </div>
 
