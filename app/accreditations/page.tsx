@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect } from "react"
+import { useEffect, useState, useRef } from "react"
 import Link from "next/link"
 import { ChevronRight, Award, FileText, Shield, CheckCircle2 } from "lucide-react"
 import { Navbar, Footer, ServicesSection } from "@/components/layout"
@@ -28,6 +28,29 @@ export default function AccreditationsPage() {
     return () => {
       elements.forEach((el) => observer.unobserve(el))
     }
+  }, [])
+
+  // Reduce overlay opacity
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      const overlay = document.querySelector('[data-slot="dialog-overlay"]')
+      if (overlay) {
+        ;(overlay as HTMLElement).style.backgroundColor = 'rgba(0, 0, 0, 0.3)'
+      }
+    })
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    })
+
+    // Also check immediately
+    const overlay = document.querySelector('[data-slot="dialog-overlay"]')
+    if (overlay) {
+      ;(overlay as HTMLElement).style.backgroundColor = 'rgba(0, 0, 0, 0.3)'
+    }
+
+    return () => observer.disconnect()
   }, [])
 
   const certificates = [
@@ -93,6 +116,180 @@ export default function AccreditationsPage() {
     }
   ]
 
+  // Zoomable Image Component
+  const ZoomableImage = ({ src, alt }: { src: string; alt: string }) => {
+    const [zoom, setZoom] = useState(1)
+    const [position, setPosition] = useState({ x: 0, y: 0 })
+    const [isDragging, setIsDragging] = useState(false)
+    const [dragStart, setDragStart] = useState({ x: 0, y: 0 })
+    const [clickStartPos, setClickStartPos] = useState({ x: 0, y: 0 })
+    const imageRef = useRef<HTMLDivElement>(null)
+    const imgRef = useRef<HTMLImageElement>(null)
+
+    const minZoom = 1
+    const maxZoom = 5
+    const zoomStep = 0.25
+    const clickZoomLevels = [1, 2, 3] // Zoom levels for click-to-zoom
+
+    const handleZoomIn = () => {
+      setZoom((prev) => Math.min(prev + zoomStep, maxZoom))
+    }
+
+    const handleZoomOut = () => {
+      setZoom((prev) => {
+        const newZoom = Math.max(prev - zoomStep, minZoom)
+        if (newZoom === minZoom) {
+          setPosition({ x: 0, y: 0 })
+        }
+        return newZoom
+      })
+    }
+
+    const handleReset = () => {
+      setZoom(1)
+      setPosition({ x: 0, y: 0 })
+    }
+
+    const handleWheel = (e: React.WheelEvent) => {
+      if (e.ctrlKey || e.metaKey) {
+        e.preventDefault()
+        const delta = e.deltaY > 0 ? -zoomStep : zoomStep
+        setZoom((prev) => {
+          const newZoom = Math.max(minZoom, Math.min(prev + delta, maxZoom))
+          if (newZoom === minZoom) {
+            setPosition({ x: 0, y: 0 })
+          }
+          return newZoom
+        })
+      }
+    }
+
+    const handleMouseDown = (e: React.MouseEvent) => {
+      // Store initial click position
+      setClickStartPos({ x: e.clientX, y: e.clientY })
+      
+      if (zoom > 1) {
+        setIsDragging(true)
+        setDragStart({ x: e.clientX - position.x, y: e.clientY - position.y })
+      }
+    }
+
+    const handleMouseMove = (e: React.MouseEvent) => {
+      if (isDragging && zoom > 1) {
+        // If moved significantly, it's a drag, not a click
+        const moveDistance = Math.sqrt(
+          Math.pow(e.clientX - clickStartPos.x, 2) + 
+          Math.pow(e.clientY - clickStartPos.y, 2)
+        )
+        
+        if (moveDistance > 5) {
+          setPosition({
+            x: e.clientX - dragStart.x,
+            y: e.clientY - dragStart.y,
+          })
+        }
+      }
+    }
+
+    const handleMouseUp = (e: React.MouseEvent) => {
+      // Check if it was a click (not a drag)
+      const moveDistance = Math.sqrt(
+        Math.pow(e.clientX - clickStartPos.x, 2) + 
+        Math.pow(e.clientY - clickStartPos.y, 2)
+      )
+      
+      // If moved less than 5px, treat as click
+      if (moveDistance < 5) {
+        handleImageClick(e)
+      }
+      
+      setIsDragging(false)
+    }
+
+    const handleImageClick = (e: React.MouseEvent) => {
+      if (!imageRef.current || !imgRef.current) return
+
+      const containerRect = imageRef.current.getBoundingClientRect()
+      const imgRect = imgRef.current.getBoundingClientRect()
+      
+      // Get click position relative to container center
+      const clickX = e.clientX - containerRect.left - containerRect.width / 2
+      const clickY = e.clientY - containerRect.top - containerRect.height / 2
+
+      // Find current zoom level index
+      const currentIndex = clickZoomLevels.findIndex(level => Math.abs(zoom - level) < 0.1)
+      const nextIndex = currentIndex === -1 || currentIndex === clickZoomLevels.length - 1 
+        ? 0 
+        : currentIndex + 1
+      
+      const nextZoom = clickZoomLevels[nextIndex]
+
+      if (nextZoom === 1) {
+        // Reset to center
+        setZoom(1)
+        setPosition({ x: 0, y: 0 })
+      } else {
+        // Calculate position to center the click point
+        const scaleChange = nextZoom / (zoom || 1)
+        const newX = clickX * (1 - scaleChange)
+        const newY = clickY * (1 - scaleChange)
+        
+        setZoom(nextZoom)
+        setPosition({ x: newX, y: newY })
+      }
+    }
+
+    useEffect(() => {
+      if (zoom === 1) {
+        setPosition({ x: 0, y: 0 })
+      }
+    }, [zoom])
+
+    return (
+      <div className="relative w-full h-full">
+        {/* Zoom Indicator */}
+        {zoom > 1 && (
+          <div className="absolute top-4 left-4 z-50 bg-background/90 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg border border-border/50">
+            <span className="text-sm font-medium text-foreground">
+              {Math.round(zoom * 100)}%
+            </span>
+          </div>
+        )}
+
+        {/* Image Container */}
+        <div
+          ref={imageRef}
+          className={`relative w-full h-full min-h-[90vh] overflow-hidden flex items-center justify-center ${
+            zoom > 1 
+              ? "cursor-grab active:cursor-grabbing" 
+              : "cursor-zoom-in"
+          }`}
+          onWheel={handleWheel}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+        >
+          <div
+            className="transition-transform duration-200 ease-out"
+            style={{
+              transform: `scale(${zoom}) translate(${position.x / zoom}px, ${position.y / zoom}px)`,
+              transformOrigin: "center center",
+            }}
+          >
+            <img
+              ref={imgRef}
+              src={src}
+              alt={alt}
+              className="max-w-full max-h-[90vh] w-auto h-auto object-contain rounded-lg select-none pointer-events-none"
+              draggable={false}
+            />
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <main className="w-full bg-background overflow-hidden">
       <Navbar />
@@ -150,14 +347,10 @@ export default function AccreditationsPage() {
                     </div>
                   </div>
                 </DialogTrigger>
-                <DialogContent className="max-w-6xl 2xl:max-w-7xl 3xl:max-w-[90rem] 4xl:max-w-[110rem] w-full p-0 bg-transparent border-0 shadow-none">
+                <DialogContent className="!max-w-full !w-[calc(100%-0rem)] !h-full !p-0 !m-0 !bg-transparent !border-0 !shadow-none !rounded-none">
                   <DialogTitle className="sr-only">{cert.alt}</DialogTitle>
-                  <div className="relative w-full flex items-center justify-center bg-background/95 backdrop-blur-sm rounded-lg p-4 2xl:p-6">
-                    <img
-                      src={cert.image}
-                      alt={cert.alt}
-                      className="max-w-full max-h-[90vh] w-auto h-auto object-contain rounded-lg"
-                    />
+                  <div className="relative w-full h-full bg-background/50 backdrop-blur-sm flex items-center justify-center">
+                    <ZoomableImage src={cert.image} alt={cert.alt} />
                   </div>
                 </DialogContent>
               </Dialog>
