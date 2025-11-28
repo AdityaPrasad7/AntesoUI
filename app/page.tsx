@@ -62,7 +62,7 @@ export default function Page() {
             <div className="space-y-8 2xl:space-y-10 3xl:space-y-12 4xl:space-y-16">
               <div className="inline-block animate-fade-in-up delay-100">
                 <span className="px-4 py-2 2xl:px-6 2xl:py-3 3xl:px-8 3xl:py-4 4xl:px-10 4xl:py-5 rounded-full bg-accent/10 border border-accent/30 text-accent text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl font-medium">
-                  Next-Generation Medical Imaging
+                  AERB Certified Quality Assurance
                 </span>
               </div>
 
@@ -255,8 +255,7 @@ export default function Page() {
             <div className="relative p-12 md:p-16 2xl:p-20 3xl:p-24 4xl:p-28 text-center">
               <h2 className="text-4xl 2xl:text-5xl 3xl:text-6xl 4xl:text-7xl font-bold mb-4 2xl:mb-6 3xl:mb-8 animate-fade-in-up delay-300">Ready to Transform Your Diagnostic Services?</h2>
               <p className="text-lg 2xl:text-xl 3xl:text-2xl 4xl:text-3xl text-foreground/80 mb-8 2xl:mb-10 3xl:mb-12 4xl:mb-16 animate-fade-in-up delay-400">
-                Connect with our team to explore how ANTESO solutions can enhance your medical institution's
-                capabilities.
+                We operate through a strong nationwide presence with Regional Service Offices in Bangalore, Hyderabad, Kolkata, Patna, Ranchi, Lucknow, Kullu, and other strategic locations across India.
               </p>
               <Link href="/contact" className="inline-block px-8 py-3 2xl:px-10 2xl:py-4 3xl:px-12 3xl:py-5 4xl:px-16 4xl:py-6 rounded-lg bg-gradient-to-r from-accent to-primary text-accent-foreground 2xl:text-lg 3xl:text-xl 4xl:text-2xl font-medium hover:shadow-lg hover:shadow-accent/20 transition-all animate-fade-in-up delay-500">
                 Get in Touch Today

@@ -177,7 +177,7 @@ export default function Footer() {
                     <MapPin className="w-4 h-4 2xl:w-5 2xl:h-5 text-accent" />
                   </div>
                   <span className="text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl text-foreground/70">
-                    New Delhi, INDIA
+                    Head Office: Delhi | RSOs: Bangalore, Hyderabad, Kolkata, Patna, Ranchi, Lucknow, Kullu & more across India
                   </span>
                 </li>
               </ul>

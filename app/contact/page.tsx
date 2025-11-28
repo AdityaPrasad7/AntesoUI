@@ -53,7 +53,12 @@ export default function ContactPage() {
     {
       icon: <MapPin className="w-6 h-6 2xl:w-7 2xl:h-7 3xl:w-8 3xl:h-8 text-accent" />,
       label: "Address",
-      value: "Flat No. 290, 2nd Floor, Block D, Pocket 7, Sector 6, Rohini, New Delhi - 110 085, INDIA"
+      value: "Flat No. 290, 2nd Floor, Block D, Pocket 7, Sector 6, Rohini, New Delhi – 110 085, INDIA"
+    },
+    {
+      icon: <MapPin className="w-6 h-6 2xl:w-7 2xl:h-7 3xl:w-8 3xl:h-8 text-accent" />,
+      label: "Our Branches",
+      value: "Regional Service Offices (RSOs) across India, including Bangalore, Hyderabad, Kolkata, Patna, Ranchi, Lucknow, Kullu, and several other strategic locations."
     },
     {
       icon: <Phone className="w-6 h-6 2xl:w-7 2xl:h-7 3xl:w-8 3xl:h-8 text-accent" />,
@@ -100,13 +105,13 @@ export default function ContactPage() {
           </div>
 
           {/* Main Heading */}
-          <div className="mb-6 2xl:mb-8 3xl:mb-10 4xl:mb-12 animate-on-scroll">
+          <div className="mb-6 2xl:mb-8 3xl:mb-10 4xl:mb-12 animate-on-scroll text-center">
             <h1 className="text-4xl 2xl:text-5xl 3xl:text-6xl 4xl:text-7xl font-bold mb-4 2xl:mb-6 3xl:mb-8 animate-fade-in-up-wide delay-100">
               <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
                 Contact Us
               </span>
             </h1>
-            <div className="w-16 h-1 2xl:w-20 2xl:h-1 3xl:w-24 3xl:h-1.5 bg-gradient-to-r from-accent to-primary rounded-full animate-fade-in-up-wide delay-200" />
+            <div className="w-16 h-1 2xl:w-20 2xl:h-1 3xl:w-24 3xl:h-1.5 bg-gradient-to-r from-accent to-primary rounded-full animate-fade-in-up-wide delay-200 mx-auto" />
           </div>
 
           {/* Main Content Grid */}
@@ -206,9 +211,6 @@ export default function ContactPage() {
 
             {/* Contact Info */}
             <div className="animate-fade-in-up-wide delay-400">
-              <p className="text-base 2xl:text-lg 3xl:text-xl 4xl:text-2xl text-foreground/70 mb-4 2xl:mb-6 3xl:mb-8 font-medium">
-                You can also reach us here:
-              </p>
               <div className="space-y-4 2xl:space-y-5 3xl:space-y-6">
                 {contactInfo.map((info, i) => (
                   <div

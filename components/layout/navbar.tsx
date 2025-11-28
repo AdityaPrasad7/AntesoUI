@@ -108,6 +108,13 @@ export default function Navbar() {
           >
             Accreditations
           </Link>
+
+          <Link
+            href="/careers"
+            className="text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl font-medium text-foreground/70 hover:text-accent transition-colors"
+          >
+            Careers
+          </Link>
         </div>
 
         <div className="hidden md:flex items-center gap-4 2xl:gap-6 3xl:gap-8">
@@ -173,12 +180,14 @@ export default function Navbar() {
           >
             Contact
           </Link>
-          <Link 
-            href="/careers"
+          <a 
+            href="https://admin.antesobiomedicalopc.com/enquiry_form"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-5 py-2 2xl:px-6 2xl:py-2.5 3xl:px-7 3xl:py-3 rounded-lg bg-gradient-to-r from-accent to-primary text-accent-foreground text-sm 2xl:text-base 3xl:text-lg hover:shadow-lg hover:shadow-accent/20 transition-all"
           >
-            Get Started
-          </Link>
+            Start Enquiry
+          </a>
         </div>
 
         {/* Mobile Menu Button */}

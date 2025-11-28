@@ -104,14 +104,13 @@ export default function ProfilePage() {
                     ANTESO Biomedical (OPC) Pvt Ltd
                   </p>
                   <p className="text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl text-foreground/70">
-                    Flat No. 290, 2nd Floor, D Block, Pocket 7, Sector 6, Rohini, New Delhi - 110 085
+                    Head Office: Delhi | RSOs: Bangalore, Hyderabad, Kolkata, Patna, Ranchi, Lucknow, Kullu & more across India
                   </p>
                 </div>
               </div>
 
-              <p className="text-lg 2xl:text-xl 3xl:text-2xl 4xl:text-3xl text-foreground/80 leading-relaxed animate-fade-in-up-wide delay-200">
-                Quality assurance Testing of Radiology Equipments as per{" "}
-                <span className="font-semibold text-accent">AERB Guidelines</span>, ensuring optimal performance, safety compliance, and regulatory standards.
+              <p className="text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl text-foreground/80 leading-relaxed animate-fade-in-up-wide delay-200">
+                Our corporate operations are centrally managed from our Head Office in Delhi. To ensure seamless service delivery and better regional coverage, we have established Regional Service Offices (RSOs) in key cities, including Bangalore, Hyderabad, Kolkata, Patna, Ranchi, Lucknow, and Kullu. This widespread network enables us to provide faster support, efficient coordination, and a stronger presence across India.
               </p>
             </div>
 
