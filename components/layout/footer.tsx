@@ -2,7 +2,7 @@
 
 import { useEffect } from "react"
 import Link from "next/link"
-import { Facebook, MessageCircle, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, ArrowRight } from "lucide-react"
+import { Mail, Phone, MapPin, ArrowRight } from "lucide-react"
 import Image from "next/image"
 
 export default function Footer() {
@@ -28,38 +28,6 @@ export default function Footer() {
       elements.forEach((el) => observer.unobserve(el))
     }
   }, [])
-  const socialLinks = [
-    { 
-      name: "Facebook", 
-      icon: Facebook, 
-      href: "https://www.facebook.com/profile.php?id=100069402677347",
-      color: "hover:bg-[#1877F2] hover:border-[#1877F2] hover:text-white"
-    },
-    { 
-      name: "Google", 
-      icon: Mail, 
-      href: "https://www.google.com",
-      color: "hover:bg-[#EA4335] hover:border-[#EA4335] hover:text-white"
-    },
-    { 
-      name: "Skype", 
-      icon: MessageCircle, 
-      href: "https://www.skype.com",
-      color: "hover:bg-[#00AFF0] hover:border-[#00AFF0] hover:text-white"
-    },
-    { 
-      name: "Twitter", 
-      icon: Twitter, 
-      href: "https://www.twitter.com",
-      color: "hover:bg-[#1DA1F2] hover:border-[#1DA1F2] hover:text-white"
-    },
-    { 
-      name: "LinkedIn", 
-      icon: Linkedin, 
-      href: "https://www.linkedin.com/company/antesobiomedical/",
-      color: "hover:bg-[#0A66C2] hover:border-[#0A66C2] hover:text-white"
-    },
-  ]
 
   return (
     <footer className="relative border-t border-border/50 bg-gradient-to-b from-background via-muted/20 to-background overflow-hidden">
@@ -186,31 +154,10 @@ export default function Footer() {
 
           {/* Bottom Section */}
           <div className="border-t border-border/50 pt-6 2xl:pt-7 3xl:pt-8 4xl:pt-9 animate-on-scroll">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-6 2xl:gap-8">
-              <p className="text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl text-foreground/60 animate-fade-in-up delay-500">
+            <div className="flex flex-col md:flex-row justify-center items-center gap-6 2xl:gap-8">
+              <p className="text-sm 2xl:text-base 3xl:text-lg 4xl:text-xl text-foreground/60 animate-fade-in-up delay-500 text-center">
                 © 2025 <span className="font-semibold text-foreground/80">ANTESO Biomedical</span>. All rights reserved.
               </p>
-              
-              {/* Social Media Icons */}
-              <div className="flex gap-4 2xl:gap-5 3xl:gap-6">
-                {socialLinks.map((social, index) => {
-                  const Icon = social.icon
-                  return (
-                    <a
-                      key={index}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center text-foreground/60 hover:text-foreground transition-colors duration-300 animate-fade-in-up"
-                      style={{ animationDelay: `${0.6 + index * 0.05}s` }}
-                      aria-label={social.name}
-                    >
-                      {/* Icon */}
-                      <Icon className="w-5 h-5 2xl:w-5 2xl:h-5 3xl:w-6 3xl:h-6 4xl:w-6 4xl:h-6" />
-                    </a>
-                  )
-                })}
-              </div>
             </div>
           </div>
         </div>
